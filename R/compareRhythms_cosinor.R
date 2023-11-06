@@ -82,6 +82,8 @@ compareRhythms_cosinor <- function(data, exp_design, period, rhythm_fdr,
   results$max_amp <- pmax(results[, paste0(group_id[1], "_amp")],
                           results[, paste0(group_id[2], "_amp")])
 
+  results$p_val_A_or_b <- rhythmic_in_either
+
   results$adj_p_val_A_or_B <- adj_pval
 
   results <- results[(results$adj_p_val_A_or_B < rhythm_fdr) &
@@ -100,6 +102,8 @@ compareRhythms_cosinor <- function(data, exp_design, period, rhythm_fdr,
   names(diff_rhy_results) <- rownames(data)
 
   diff_rhy_results <- diff_rhy_results[results$id]
+
+  results$p_val_DR <- diff_rhy_results
 
   results$adj_p_val_DR <- stats::p.adjust(diff_rhy_results,
                                           method = "BH")
