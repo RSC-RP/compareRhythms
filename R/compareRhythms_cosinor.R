@@ -82,7 +82,7 @@ compareRhythms_cosinor <- function(data, exp_design, period, rhythm_fdr,
   results$max_amp <- pmax(results[, paste0(group_id[1], "_amp")],
                           results[, paste0(group_id[2], "_amp")])
 
-  results$p_val_A_or_b <- rhythmic_in_either
+  results$p_val_A_or_B <- rhythmic_in_either
 
   results$adj_p_val_A_or_B <- adj_pval
 
