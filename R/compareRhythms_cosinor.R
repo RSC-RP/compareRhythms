@@ -86,8 +86,8 @@ compareRhythms_cosinor <- function(data, exp_design, period, rhythm_fdr,
 
   results$adj_p_val_A_or_B <- adj_pval
 
-  results <- results[(results$adj_p_val_A_or_B < rhythm_fdr) &
-                      (results$max_amp >= amp_cutoff), ]
+  # results <- results[(results$adj_p_val_A_or_B < rhythm_fdr) &
+  #                     (results$max_amp >= amp_cutoff), ]
 
   assertthat::assert_that(assertthat::not_empty(results),
                           msg = "Sorry no rhythmic genes in either dataset for the thresholds provided.")
